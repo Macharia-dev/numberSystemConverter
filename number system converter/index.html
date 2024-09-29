@@ -107,16 +107,26 @@
 
     <script>
         function convert() {
-            // Get the input values
+           /* ... Get the input values
+            ...document.getElementById('number').value grabs the number that
+            the user has typed into an input field with the ID number.
+document.getElementById('base').value grabs the base (like 2 for binary, 8 for octal, etc.) that the user
+has selected from another input field with the ID base.*/
             const number = document.getElementById('number').value;
             const base = document.getElementById('base').value;
 
             // Validate inputs
+            /*
+            It checks if the user has entered a number. If the number field is empty, 
+            an alert message pops up saying "Please enter a number." and the
+            function stops using return.*/
             if (number === '') {
                 alert('Please enter a number.');
                 return;
             }
-
+        /*-parseInt(base) takes the base selected by the user (which is in string form) and converts 
+        it to an integer (like converting the string "2" to the number 2).
+        This base will be used to understand the input number */
             const baseValue = parseInt(base);
 
             // Convert the number to decimal first
@@ -132,6 +142,12 @@
             }
 
             // Convert to other bases
+            /*Once the number is in decimal form, the code converts it to:
+            Binary (toString(2)) – Converts the decimal number to base 2 (binary).
+            Octal (toString(8)) – Converts the decimal number to base 8 (octal).
+            Hexadecimal (toString(16).toUpperCase()) – Converts the decimal number 
+            to base 16 (hexadecimal), and .toUpperCase() ensures
+            the letters in hexadecimal (A, B, C, etc.) are in uppercase.*/
             const binaryValue = decimalValue.toString(2);
             const octalValue = decimalValue.toString(8);
             const hexValue = decimalValue.toString(16).toUpperCase();

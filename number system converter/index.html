@@ -12,16 +12,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color:white;
             margin: 0;
+            height: 100vh;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            
         }
 
-        .container {
+        .head {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
@@ -36,7 +37,7 @@
             color: #333;
         }
 
-        .form-group {
+        .form {
             margin-bottom: 15px;
         }
 
@@ -58,16 +59,17 @@
 
         button {
             padding: 10px 20px;
-            background-color: #000000;
+            
+            font-size: 15px;
             color: white;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 5px;
+            background-color: black;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: orangered;
+            background-color: yellow;
         }
 
         .result {
@@ -79,15 +81,15 @@
             margin: 5px 0;
         }
     </style>
-    <div class="container">
+    <div class="head">
         <h1>Number System Converter</h1>
         <div class="form">
             <label for="number">Enter Number:</label>
             <input type="text" id="number" placeholder="Enter a number to be Converted here">
         </div>
         <div class="form">
-            <label for="base">Select Base:</label>
-            <select id="base">
+            <label for="base-number">Select Base:</label>
+            <select id="base-number">
                 <option value="2">Binary (Base 2)</option>
                 <option value="8">Octal (Base 8)</option>
                 <option value="10">Decimal (Base 10)</option>
@@ -113,7 +115,7 @@
 document.getElementById('base').value grabs the base (like 2 for binary, 8 for octal, etc.) that the user
 has selected from another input field with the ID base.*/
             const number = document.getElementById('number').value;
-            const base = document.getElementById('base').value;
+            const base = document.getElementById('base-number').value;
 
             // Validate inputs
             /*
